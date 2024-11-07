@@ -38,9 +38,11 @@ function addTransactionHistory(method, amount) {
 
 function getTransactionHistory() {
   console.log("Transaction History");
-  for (let i = 0; i < transactionHistory.length; i++) {
-    console.log(`${i + 1}) ${transactionHistory[i]}`);
-  }
+  return transactionHistory
+    .map((transaction, index) => {
+      return `${index + 1}) ${transaction}`;
+    })
+    .join("\n");
 }
 
 // Instructor's test cases
